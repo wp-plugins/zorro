@@ -2,14 +2,16 @@
 Contributors: tricd
 Tags: security, spam
 Requires at least: 3.8
-Tested up to: 4.1.1
-Stable tag: 0.1
+Tested up to: 4.3
+Stable tag: 0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 The Zorro plugin help you to basically secure your WordPress installation.
 
 == Description ==
+
+Attention: If you use WP Super Cache the HTTP-Headers will always overwritten and all header adjustments by WP Zorro will not work.
 
 With Zorro you will enable some basic security settings for your WordPress installation. The current version adds
 the following features:
@@ -38,6 +40,9 @@ No. It just helps you to add some basic security settings. Depending on your plu
 
 
 == Changelog ==
+
+= 0.2 =
+* Fixed some issues and 
 
 = 0.1 =
 * Initial release with some basic settings

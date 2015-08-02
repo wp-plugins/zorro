@@ -48,20 +48,30 @@ class Zorro{
 	function modifyHeader($headers)
 	{
 
-		// remove information
-		unset($headers['X-Pingback']);
-		unset($headers['WP-Super-Cache']);
+        $headersToRemove = array(
+            'X-Pingback',
+            'WP-Super-Cache',
+            'X-Powered-By'
+        );
 
-		// the remove function was not enabled in < 5.3
-		if (version_compare(PHP_VERSION, '5.3.0') >= 0) {
-			header_remove('X-Powered-By');
-		} else {
-			$headers['X-Powered-By'] = '';
-		}
+
+        foreach($headersToRemove as $headerToRemove) {
+
+            // try wordpress function
+            if (isset($headers[$headerToRemove])) {
+                unset($headers[$headerToRemove]);
+            }
+
+            // the remove function was not enabled in < 5.3
+            if (version_compare(PHP_VERSION, '5.3.0') >= 0) {
+                header_remove($headerToRemove);
+            } else {
+                header($headerToRemove.':');
+            }
+        }
 
 		// add information
 		$headers['X-Frame-Options'] = 'SAMEORIGIN';
-
 
 		return $headers;
 
