@@ -4,7 +4,7 @@ Plugin Name: Zorro - WordPress
 Plugin URI: https://www.tricd.de/zorro/
 Description: Checks the health of your WordPress install
 Author: Tobias Redmann
-Version: 0.1
+Version: 0.2
 Author URI: https://www.tricd.de
 Text Domain: zorro
 */
